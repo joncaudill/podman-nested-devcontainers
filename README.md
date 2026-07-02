@@ -1,4 +1,4 @@
-# Secure AI Agent Container Sandbox (Arch Linux Platform Spec)
+# Container-in-Container Sandbox
 
 Ever needed to run something in a container because you didn't trust it? Me too.
 Ever run something in a container but then needed it to have the ability to also create and use containers? Me too.
