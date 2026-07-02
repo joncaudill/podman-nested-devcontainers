@@ -1,0 +1,16 @@
+{
+    "name": "Isolated Agent Sandbox Engine",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    // Dynamically tracks your host path generically
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
+    "workspaceFolder": "/workspace",
+    "overrideCommand": true,
+    // Grant the required system privileges for nesting
+    "runArgs": [
+        "--privileged"
+    ],
+    // Ensure the container remains active for post-run artifact collection
+    "shutdownAction": "none"
+}

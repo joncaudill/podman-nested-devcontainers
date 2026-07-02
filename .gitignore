@@ -1,0 +1,6 @@
+# Ignore temporary testing outputs
+*.txt
+*.log
+
+# Ignore IDE state folders
+.vscode/
