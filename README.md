@@ -13,7 +13,7 @@ This is what I use as a prototype when making setups for testing untrusted code 
 
 If you like this, maybe you can get someone to hire me, or drop me a tip.  Things are grim these days in the job market and the landord cometh. my ko-fi is joncaudill [link](https://ko-fi.com/joncaudill "Ko-Fi Link").
 
-## 1. Host Machine Requirements (Arch Linux)
+## 1. Host Machine Requirements
 For Arch based systems:
 Ensure your physical host machine has the core unprivileged routing and layering utilities active before initializing:
 ```bash
@@ -46,17 +46,17 @@ Before opening the workspace, you must tell the VS Code Dev Containers extension
     "dev.containers.dockerComposePath": "podman-compose"
 }
 ```
-## 1.7 Alternative IDE Host Configuration (JetBrains, CLI, etc.)
+## 1.7 Alternative IDE Host Configuration
 If you are not using VS Code but use another major IDE or tool that supports the open-source devcontainer spec, you must point its container executor to Podman.
 
-### Option A: JetBrains IDEs (IntelliJ, WebStorm, PyCharm)
+### Option A: JetBrains IDEs
 JetBrains handles devcontainers natively through its central Docker plugin ecosystem.
 1. Go to **Settings** -> **Build, Execution, Deployment** -> **Docker**.
 2. Click the **`+`** icon to add a new connection.
 3. Change the connection type from Docker to **Podman**.
 4. Under **Settings** -> **Build, Execution, Deployment** -> **Dev Containers**, ensure the default Docker environment drops down to use your newly added Podman connection profile.
 
-### Option B: The Official Devcontainer CLI Tool (Universal Terminal)
+### Option B: The Official Devcontainer CLI Tool
 If you are using a lightweight terminal setup, Neovim, or a platform without GUI extension settings, you can launch this entire blueprint using the official, open-source Node-based Devcontainer CLI tool.
 1. Install the CLI utility globally on your host:
    ```bash
