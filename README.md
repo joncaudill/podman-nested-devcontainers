@@ -70,10 +70,12 @@ If you are using a lightweight terminal setup, Neovim, or a platform without GUI
 ---
 
 ## 2. Devcontainer Sandbox Engine Layout
-The files, as-is, in the `.devcontainer` directory will set up what is necessary for the nestable podman environment with a basic alpine linux install.
+The files, as-is, in the `.devcontainer` directory will set up what is necessary for the nestable podman environment with a node:trixie (debian) linux install.
+This was originally an alpine linux install but since the proof of concept worked, I needed it to do more, and wanted to be a bit less brittle than doing a symlink for docker, and wanted to be able to use podman-compose.   So, I went for the "business casual khakis" of a debian image.
 
 From inside the devcontainer, you can also setup nested podman instances.
-An alias has been set up for `docker` inside the container so that any agents expecting to use docker will be able to do so.
+
+To allow people and agents used to using docker to be able to use this, podman-docker has been added to the container so that translation of docker commands to podman and podman-compose happen.   This might not be perfect but it works better than the original symlink of docker to podman.
 
 - `.devcontainer/Dockerfile`: Configures the basic environment. Installs the required drivers and tools to make it work, and to get around the locking errors.
 - `.devcontainer/devcontainer.json`: Tells your IDE to map your project directory, keep the container awake, and to allocate system capabilities to support the child runtimes (i.e. `--privileged`)
